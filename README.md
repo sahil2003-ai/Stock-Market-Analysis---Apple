@@ -176,3 +176,11 @@ Sahil Kumar
 ## License
 
 This project is open source and available under the MIT License.
+
+## Live Demo
+
+**Try the app online:** [Stock Price Forecast App](https://stock-market-analysis---apple-qj4jebpk8mthmdmysuy5vy.streamlit.app/)
+
+The Streamlit application is deployed on Streamlit Cloud and is ready to use. Simply visit the link above to upload your stock data and get instant forecasts!
+
+This project is open source and available under the MIT License.
