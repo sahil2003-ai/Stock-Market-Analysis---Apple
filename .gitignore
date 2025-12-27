@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Data and cache
+*.csv
+__pycache__/
+.cache/
+*.cache
+
+# Environment
+.env
+.env.local
+
+# Output files
+*.log
+.streamlit/
+.pytest_cache/
+
+# Model files (optional, uncomment to exclude)
+# *.joblib
+# *.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS
+Thumbs.db
