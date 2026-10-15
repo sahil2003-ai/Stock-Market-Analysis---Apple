@@ -2,6 +2,8 @@
 
 A time-series portfolio project exploring historical Apple price data and a forecasting application with multiple statistical and machine-learning models.
 
+![Status](https://img.shields.io/badge/Status-Documented-yellow)
+
 ## 📌 Table of Contents
 
 - [Overview](#-overview)
@@ -29,24 +31,27 @@ A time-series portfolio project exploring historical Apple price data and a fore
 
 ## 🎯 Problem Statement
 
-The project frames an analytical or engineering question using the data, code, and outputs available in this repository. Findings should be interpreted according to the documented dataset, methodology, and limitations.
+The project addresses an analytical or predictive question using the data and implementation files in the repository. Results are meaningful only when dataset definitions, preprocessing, and evaluation design are transparent.
 
 ## 🎯 Objectives
 
-- Understand the data and project question.
-- Document the implemented analytical or engineering workflow.
-- Report measurable results only where supported by repository evidence.
-- Make the work reproducible for reviewers.
+- Inspect and prepare the available data.
+- Implement the analysis or model workflow documented in the project.
+- Report verifiable metrics and distinguish saved outputs from reproduced results.
+- Make the project easier to reproduce and review.
 
 ## ✨ Features
 
-The features below are limited to the work described in the existing repository documentation.
+### Forecasting workflow
 
-### Results and model validation
+The repository documents an ensemble with multiple forecasting approaches (including ARIMA/SARIMA and exponential smoothing variants) and an XGBoost meta-learner. The Streamlit app accepts a CSV containing date and closing-price columns and supports a selectable forecast horizon of 1–60 business days.
 
-The historical CSV profile above was recalculated from the current repository file. The notebook could not be fully extracted within the connector's response limit in this review, and no forecast-versus-actual metric table was independently confirmed. Therefore, this README does not claim a verified forecasting accuracy, MAE, or RMSE.
-
-A valid model comparison should document the forecast horizon, chronological split dates, baseline score, test period, model configuration, and error metric. Historical performance is not a guarantee of future price direction.
+1. Verify and sort the historical date series.
+2. Inspect stationarity and temporal patterns.
+3. Split data chronologically before fitting models or transformations.
+4. Compare each model to a naive baseline on the same forecast horizon.
+5. Evaluate holdout predictions using MAE/RMSE and other appropriate metrics.
+6. Check that the app applies the same preprocessing expected by each saved model.
 
 ## 📂 Dataset
 
@@ -86,8 +91,6 @@ The repository documents an ensemble with multiple forecasting approaches (inclu
 
 ## 🗂️ Repository Structure
 
-### Project files
-
 | File | Purpose |
 |---|---|
 | `P614 DATASET.csv` | Historical daily price data |
@@ -113,35 +116,17 @@ The historical CSV profile above was recalculated from the current repository fi
 
 A valid model comparison should document the forecast horizon, chronological split dates, baseline score, test period, model configuration, and error metric. Historical performance is not a guarantee of future price direction.
 
-## Additional Project Documentation\n\n### Run the app
+## 🖼️ Screenshots
 
-1. Create a Python environment and install `requirements.txt`.
-2. Launch the app from the repository root:
-
-   ```bash
-   streamlit run app.py
-   ```
-
-3. Upload a CSV with date and closing-price fields and select the correct columns.
-4. Select a forecast horizon and generate predictions.
-
-Live app link, as documented in `APP_LINK.md`: [Stock Price Forecast App](https://stock-market-analysis---apple-qj4jebpk8mthmdmysuy5vy.streamlit.app/).
-
-### Author
-
-Sahil Gaikwad · [GitHub](https://github.com/sahil2003-ai) · [LinkedIn](https://www.linkedin.com/in/sahil-gaikwad-a76b7224a/)\n## 🖼️ Screenshots
-
-No verified screenshot path was identified in the existing README. Add real screenshots from the repository only when the corresponding image files exist.
+Add only genuine charts or application screenshots that exist in the repository. No screenshot path is asserted here unless documented in the source files.
 
 ## 🧩 Challenges and Solutions
 
-### Validation and reproducibility
-
-| Challenge | Approach |
+| Challenge | Solution |
 |---|---|
-| Metrics can be mistaken for independently verified results | Preserve the evidence status stated in the existing documentation. |
-| Data sources, filters, or execution environments may differ | Confirm source paths, schema, dependencies, and calculation definitions when rerunning. |
-| Screenshots and dashboard outputs may not be independently accessible | Only link to real files present in the repository. |
+| Saved notebook results can become stale | Rerun cells from top to bottom and verify outputs. |
+| Model performance can be overstated | Use a valid holdout or cross-validation and report the split strategy. |
+| Reproduction depends on paths and package versions | Document dependencies, input paths, and data provenance. |
 
 ## ⚠️ Limitations
 
@@ -158,9 +143,9 @@ No verified screenshot path was identified in the existing README. Add real scre
 
 ## 📚 What I Learned
 
-### Skills demonstrated
-
-Python, pandas, time-series preparation, statistical forecasting, model comparison, validation design, model serialization, and Streamlit.
+- Building a documented and reproducible analysis workflow.
+- Choosing metrics appropriate to the task and dataset.
+- Explaining assumptions and limitations alongside results.
 
 ## 👤 Author
 
