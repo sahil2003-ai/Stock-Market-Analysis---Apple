@@ -1,35 +1,28 @@
 # Apple Stock Time-Series Analysis and Forecasting
 
-A time-series portfolio project exploring historical Apple stock prices and comparing statistical and machine-learning forecasting approaches.
+A time-series project comparing statistical and machine-learning methods on historical Apple stock-price data.
 
-## Dataset
-The current project documentation identifies `P614_DATASET.csv` with daily market observations from 2012 to 2019. Verify the actual file, date range, adjusted-price definition, and data source before reproducing the analysis.
+## Step-by-step workflow
 
-## Methods Documented
-- Missing-value handling and business-day resampling
-- Augmented Dickey-Fuller stationarity testing
-- Trend/seasonality decomposition and ACF/PACF analysis
-- Simple and Holt-Winters exponential smoothing
-- ARIMA and SARIMA variants
-- Feature-engineered regression
-- A stacked ensemble using XGBoost as a meta-learner
-
-## Project Goals
-Compare model approaches, examine time-series patterns, and evaluate forecast errors using a chronological validation strategy.
+1. Inspect `P614 DATASET.csv` and confirm its source, date range, price column, and missing values.
+2. Open `SMA_apple.ipynb` and review the chronological ordering and preprocessing steps.
+3. Explore price trends, returns, stationarity, decomposition, and ACF/PACF as implemented.
+4. Create chronological training, validation, and test windows; do not randomly shuffle time-series observations.
+5. Fit statistical models and machine-learning approaches using only historical data available at each prediction point.
+6. Compare against naive or seasonal-naive baselines.
+7. Evaluate using a stated forecast horizon and appropriate error metrics such as MAE and RMSE.
+8. Check ensemble construction for leakage and compare notebook results with saved model files.
+9. Review `app.py` and `APP_LINK.md` for the intended app usage.
+10. Document verified results and limitations.
 
 ## Tools
-Python, pandas, statsmodels/time-series methods, scikit-learn, XGBoost, and visualization libraries as used in the notebook.
+Python, pandas, time-series/statistical libraries, scikit-learn, XGBoost, Streamlit.
 
-## Evaluation Checklist
-- Use chronological train/validation/test splits.
-- Fit transformations only on historical training data.
-- Compare against naive and seasonal-naive baselines.
-- Report MAE, RMSE, and MAPE only where appropriate.
-- Ensure ensemble meta-features are generated without leakage.
-- State the forecast horizon and retraining procedure.
+## Screenshots
+No screenshot files were found in the repository root. Add an app or forecast plot to `images/` and embed it here.
 
 ## Limitations
-Historical stock prices are noisy and do not reliably predict future returns. This project is for learning and model-comparison purposes, not investment advice.
+Stock prices are noisy and historical performance does not reliably predict future returns. This project is educational, not investment advice.
 
-## Recommended Improvements
-Document exact model metrics and evaluation windows, add forecast-versus-actual plots, provide reproducible environment instructions, and explain how look-ahead bias is avoided.
+## Next improvements
+Document dataset provenance, exact forecast horizon, baseline comparison, verified metrics, and a reproducible environment.
